@@ -11,6 +11,11 @@
   <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700|Merriweather+Sans:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" />
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
+<![endif]-->
+
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
 <script src="../assets/js/html5shiv.js"></script>
@@ -35,7 +40,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#speakers">Speakers</a></li>
             <li><a href="#register">Register</a></li>
-            <li><a href="#credits">Credits</a></li>
+            <li><a href="#venue">Venue</a></li>
           </ul>
         </div>
       </div>
@@ -118,6 +123,24 @@
     </section>
 
     <hr>
+
+    <section id="venue">
+      <p class="text-center head"><b>Venue</b></p>
+      <div class="row-fluid">
+        <div class="span3">
+          <address class="text-center">
+            <strong><a href="http://www.bicentre.org/">Bangalore International Centre</a></strong><br>
+          4th Main, 2nd Cross, Domlur II Stage<br>
+          Bangalore, 560071<br>
+          </address>
+        </div>
+        <div class="span9">
+          <div id="map"></div>
+        </div>
+      </div>
+    </section>
+
+    <hr>
     <section id="credits">
       <div  class="footer">
         <p><a href="http://www.ted.com/profiles/view?id=299148">Gautam John</a> | Ashok Kamath | Shuaiba Rahaman | Asha Sharath</p><p>Built by <a href="http://twitter.com/geohacker">@geohacker</a> | &copy; 2013 TEDxBangaloreChange</p>
@@ -128,6 +151,7 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
 
   <script type="text/javascript">
   $(function () {
@@ -147,7 +171,25 @@
     };
     processScroll();
     $win.on("scroll", processScroll);
+
+var venue = L.latLng([12.96379, 77.63809]);
+var map = L.map('map', {zoomControl: false, attributionControl: false}).setView(venue, 15);
+var mapquestUrl = 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
+subDomains = ['otile1','otile2','otile3','otile4'];
+var mapquest = new L.TileLayer(mapquestUrl, {maxZoom: 18, subdomains: subDomains});
+mapquest.addTo(map);
+
+L.marker(venue).addTo(map)
+    .bindPopup('Bangalore International Centre');
+  
+
+    L.control.attribution({position: 'bottomleft'})
+  .addAttribution("&copy; <a href='http://osm.org/copyright'>OpenStreetMap</a>")
+  .setPrefix("")
+  .addTo(map);
+
   });
+
   </script>
 </body>
 </html>
