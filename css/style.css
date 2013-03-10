@@ -1,6 +1,6 @@
 body {
-  padding-top: 20px;
-  padding-bottom: 60px;
+  padding-top: 30px;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 /* Custom container */
@@ -9,7 +9,7 @@ body {
   max-width: 1000px;
 }
 .container > hr {
-  margin: 60px 0;
+  margin: 20px 0;
 }
 
 /* Main marketing message and sign up button */
@@ -50,7 +50,7 @@ body {
 }
 .navbar-inner {
  border: thin none !important;
-  border-radius: 0px !important;
+  /*border-radius: 0px !important;*/
 }
 
 .navbar .nav {
@@ -82,14 +82,66 @@ body {
   background-image: url('../images/masthead.jpg');
   background-repeat: none;
   height: 200px;
+  border-radius: 3px 3px 3px 3px;
 }
 
-.about {
+.title {
   margin-top: 20px;
   font-size: 20px;
   line-height: 25px;
 }
 
 .video {
-  margin-top: 20px;
+  margin-top: 40px;
+}
+
+@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
+.video iframe { width: 350px; height: 250px; }
+}
+
+/*
+#speakers div {
+  background: #ddd;
+  border-radius: 15px;
+  padding: 10px;
+}*/
+.speakers p {
+  color: rgb(100,100,100);
+  font-weight: 200;
+  margin: 0px;
+}
+
+.speakers h2 {
+  font-size: 25px;
+  font-weight: normal;
+}
+#speakers2 {
+  margin-top: 10px;
+}
+
+.about {
+  color: rgb(100,100,100);
+  font-size: 15px;
+  line-height: 24px;
+}
+
+#register {
+ height: 100%;
+ }
+
+  #register iframe {
+  width: 100%;
+  border: none;
+  height: 1100px;
+}
+
+section {
+  padding: 3.5em 0;
+}
+
+.head {
+  font-size: 35px;
+  font-weight: 1000px;
+  margin-bottom: 30px;
+  font-family: 'Merriweather', serif;
 }
