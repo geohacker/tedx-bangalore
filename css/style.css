@@ -79,7 +79,7 @@ body {
 }
 
 .masthead {
-  background-image: url('../images/masthead1.png');
+  background-image: url('../images/masthead.png');
   background-repeat: no-repeat;
   height: 200px;
   border-radius: 3px 3px 3px 3px;
@@ -107,6 +107,11 @@ body {
 @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
 .video iframe { width: 350px; height: 250px; }
 .masthead .time{ display: block;}
+
+.navbar .nav li a{
+  font-size: 12px;
+}
+
 }
 }
 
