@@ -156,3 +156,7 @@ section {
   background-image: url('../images/speakers.jpg');
   height: 400px;
 }
+
+.flickr {
+  margin-top: 30px;
+}
